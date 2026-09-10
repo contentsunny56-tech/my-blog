@@ -1,0 +1,182 @@
+/* ============================================
+   STYLES.CSS
+   This one file styles every page of the blog.
+   It's organized top to bottom in the order the
+   browser reads it: reset -> base -> layout ->
+   components -> responsive tweaks at the end.
+   ============================================ */
+
+/* --- 1. Reset & variables ---
+   CSS variables (the --name: value lines below) let us
+   define a color or size ONCE and reuse it everywhere,
+   so changing the whole site's look means editing one line. */
+:root {
+  --bg: #2b1b12;          /* deep espresso brown - main background */
+  --bg-raised: #3a2718;   /* slightly lighter brown for cards */
+  --ink: #f0e6d6;         /* warm cream - main text color */
+  --ink-dim: #c9b9a3;     /* muted cream - secondary text */
+  --accent: #4a90d9;      /* blue - links, highlights */
+  --accent-dim: #8a5a30;  /* darker copper - borders, dividers */
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --max-width: 680px; /* keeps lines of text short enough to read easily */
+}
+
+* {
+  box-sizing: border-box; /* padding no longer adds to an element's width */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent; /* underline appears only on hover */
+  transition: border-color 0.15s ease;
+}
+a:hover,
+a:focus-visible {
+  border-bottom-color: var(--accent);
+}
+/* Accessibility: a visible outline when navigating with a keyboard (Tab key) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* --- 2. Layout ---
+   Everything on the page sits inside a centered column
+   so text doesn't stretch edge-to-edge on wide screens. */
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header.site-header {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid var(--accent-dim);
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.site-tagline {
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+main {
+  padding: 48px 0 80px;
+}
+
+footer.site-footer {
+  border-top: 1px solid var(--accent-dim);
+  padding: 32px 0;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+}
+
+/* --- 3. Post list (homepage) --- */
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--accent-dim);
+}
+.post-list li:first-child {
+  padding-top: 0;
+}
+
+.post-list .post-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+  margin-bottom: 6px;
+}
+
+.post-list h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.post-list p {
+  color: var(--ink-dim);
+}
+
+/* --- 4. Single post page --- */
+.post-header {
+  margin-bottom: 40px;
+}
+
+.post-header .post-date {
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+
+.post-header h1 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-top: 8px;
+}
+
+.post-body p {
+  margin-bottom: 1.2em;
+}
+
+.post-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 1.6em 0 0.6em;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  color: var(--ink-dim);
+  font-style: italic;
+  margin: 1.5em 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+}
+
+/* --- 5. Small screens ---
+   Below 480px (most phones), shrink the big headline
+   and tighten the top spacing so it doesn't feel oversized. */
+@media (max-width: 480px) {
+  header.site-header {
+    padding: 40px 0 28px;
+  }
+  .post-header h1 {
+    font-size: 1.75rem;
+  }
+  .site-title {
+    font-size: 1.6rem;
+  }
+}
