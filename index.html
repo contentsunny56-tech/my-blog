@@ -1,45 +1,366 @@
 <!DOCTYPE html>
-<!--
-  INDEX.HTML — this is the homepage.
-  It lists every post with a short excerpt, newest first.
-  To add a new post: copy one <li> block below, and create
-  a matching post-N.html file (post.html is the template).
--->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slow Brew — a journal about home coffee</title>
-  <meta name="description" content="Notes on brewing better coffee at home, one cup at a time." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Theft Auto V | PC Download & System Specs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', -apple-system, sans-serif;
+    }
 
-  <!-- Google Fonts: a serif for headlines, a sans-serif for body text -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    body {
+      background-color: #0d0f14;
+      color: #e5e9f0;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      padding: 0 0 50px 0;
+    }
 
-  <link rel="stylesheet" href="styles.css" />
+    .container {
+      max-width: 580px;
+      width: 100%;
+      background: #11141c;
+      min-height: 100vh;
+      border-left: 1px solid #1f2533;
+      border-right: 1px solid #1f2533;
+    }
+
+    /* Hero Banner */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13,15,20,0.2) 0%, rgba(17,20,28,0.95) 90%, #11141c 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    .badge-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      background: #eab308;
+      color: #000;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-alt {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+
+    .game-title {
+      font-size: 26px;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+
+    .content {
+      padding: 0 20px;
+    }
+
+    .description {
+      color: #9ba3b4;
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 24px;
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 26px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 16px;
+      background: #eab308;
+      border-radius: 2px;
+    }
+
+    /* Download Card */
+    .download-card {
+      background: #181d28;
+      border: 1px solid #283042;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .download-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .server-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .server-status {
+      font-size: 11px;
+      font-weight: 700;
+      color: #22c55e;
+      text-transform: uppercase;
+    }
+
+    .download-desc {
+      font-size: 12px;
+      color: #7b8499;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-green {
+      background: #16a34a;
+    }
+
+    .btn-blue {
+      background: #2563eb;
+    }
+
+    /* System Requirements Table */
+    .specs-box {
+      background: #181d28;
+      border: 1px solid #283042;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .specs-header {
+      background: #202736;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #eab308;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .specs-row {
+      display: flex;
+      padding: 10px 14px;
+      border-bottom: 1px solid #202736;
+      font-size: 13px;
+    }
+
+    .specs-row:last-child {
+      border-bottom: none;
+    }
+
+    .specs-key {
+      width: 32%;
+      color: #7b8499;
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .specs-val {
+      width: 68%;
+      color: #d1d7e0;
+      font-size: 12px;
+    }
+
+    /* Steps */
+    .steps {
+      background: #181d28;
+      border: 1px solid #283042;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: #9ba3b4;
+    }
+
+    .steps ol {
+      padding-left: 18px;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 34px;
+      font-size: 12px;
+      color: #555f75;
+      padding-bottom: 16px;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="wrap">
-    <header class="site-header">
-      <div class="site-title">Slow Brew</div>
-      <p class="site-tagline"> suuny singh Notes on making better coffee, one cup at a time.</p>
-    </header>
+  <div class="container">
+    <!-- Game Banner -->
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="GTA V">
+      <div class="hero-overlay">
+        <div class="badge-bar">
+          <span class="tag">PC Edition</span>
+          <span class="tag tag-alt">Compressed</span>
+          <span class="tag tag-alt">v1.0.3095</span>
+        </div>
+        <h1 class="game-title">Grand Theft Auto V</h1>
+      </div>
+    </div>
 
-    <main>
-      <ul class="post-list">
+    <div class="content">
+      <p class="description">
+        Experience Rockstar Games' acclaimed open-world action title set across Los Santos and Blaine County. Download compressed archive files with working mirrors below.
+      </p>
 
-      <li>
-  <span>Games</span>
-  <h2><a href="gta-v.html">Grand Theft Auto V Download</a></h2>
-  <p>External link for the compressed game files.</p>
-</li>
-      </ul>
-    </main>
+      <!-- Download Links -->
+      <div class="section-title">Download Mirrors</div>
 
-    <footer class="site-footer">
-      <p>Built by hand, one HTML file at a time.</p>
-    </footer>
+      <div class="download-card">
+        <div class="download-header">
+          <span class="server-name">Mirror 1: GoFile Cloud</span>
+          <span class="server-status">● Online</span>
+        </div>
+        <div class="download-desc">High-speed external cloud storage download.</div>
+        <a class="btn btn-green" href="https://gofile.io/d/joTkiZUx" target="_blank" rel="noopener noreferrer">
+          Download Archive (GoFile)
+        </a>
+      </div>
+
+      <div class="download-card">
+        <div class="download-header">
+          <span class="server-name">Mirror 2: FileDitch (SteamRIP)</span>
+          <span class="server-status">● Online</span>
+        </div>
+        <div class="download-desc">Direct compressed repack archive file.</div>
+        <a class="btn btn-blue" href="https://fileditchfiles.st/balpha9/b3d7ebcb9f78d88b3d21/Grand-Theft-Auto-V-SteamRIP.com.rar" target="_blank" rel="noopener noreferrer">
+          Download .RAR (FileDitch)
+        </a>
+      </div>
+
+      <!-- System Specs -->
+      <div class="section-title">System Requirements</div>
+
+      <div class="specs-box">
+        <div class="specs-header">Minimum Requirements</div>
+        <div class="specs-row">
+          <div class="specs-key">OS</div>
+          <div class="specs-val">Windows 10 / 11 64-bit</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">CPU</div>
+          <div class="specs-val">Intel Core 2 Quad Q6600 @ 2.40GHz / AMD Phenom 9850</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">RAM</div>
+          <div class="specs-val">4 GB</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">GPU</div>
+          <div class="specs-val">NVIDIA 9800 GT 1GB / AMD HD 4870 1GB</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">Storage</div>
+          <div class="specs-val">110 GB available space</div>
+        </div>
+      </div>
+
+      <div class="specs-box">
+        <div class="specs-header">Recommended Specifications</div>
+        <div class="specs-row">
+          <div class="specs-key">OS</div>
+          <div class="specs-val">Windows 10 / 11 64-bit</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">CPU</div>
+          <div class="specs-val">Intel Core i5 3470 @ 3.2GHz / AMD X8 FX-8350 @ 4GHz</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">RAM</div>
+          <div class="specs-val">8 GB (16 GB Recommended)</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">GPU</div>
+          <div class="specs-val">NVIDIA GTX 660 2GB / AMD HD 7870 2GB</div>
+        </div>
+        <div class="specs-row">
+          <div class="specs-key">Storage</div>
+          <div class="specs-val">110 GB SSD</div>
+        </div>
+      </div>
+
+      <!-- Installation Guide -->
+      <div class="section-title">Installation Guide</div>
+      <div class="steps">
+        <ol>
+          <li>Download the archive file from either Mirror 1 or Mirror 2 above.</li>
+          <li>Extract the file using <strong>WinRAR</strong> or <strong>7-Zip</strong>.</li>
+          <li>Open the extracted folder and run <code>PlayGTAV.exe</code> or <code>GTA5.exe</code> as Administrator.</li>
+          <li>Install the DirectX and Visual C++ redistributables inside the <code>_Redist</code> folder if prompted.</li>
+        </ol>
+      </div>
+
+      <footer>
+        Grand Theft Auto V Fan Page & Archive Hub
+      </footer>
+    </div>
   </div>
 
 </body>
